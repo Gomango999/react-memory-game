@@ -1,11 +1,15 @@
 body {
   /* background-color: #2f3033; */
-  background-color: #171f15;
+  background-color: #3c8348;
   font-family: sans-serif;
   color: rgb(255, 255, 255);
   background-image: url(https://i.imgur.com/I73OWYX.jpg);
   background-size: cover;
   text-align: center;
+  margin: 0px 10px;
+  min-height: 100%;
+  height: 100%;
+
 }
 
 h1 {
@@ -20,33 +24,46 @@ h1 {
 }
 
 .card-container {
-  height: 182px;
+  height: 198.3px;
   width: 130px;
   margin: 6px;
   /* border: 1px red solid; */
 
 }
 .card {
-  height: 168px;
+  /* height: 168px; */
+  height: 183px;
   width: 120px;
   position: relative;
+  top: calc((198.3px - 183px)/2);
   left: calc((130px - 120px)/2);
-  top: calc((182px - 168px)/2);
-  /* left: 40px; */
 
-  background-image: url(//cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_1024x1024.png?v=1535755695);
-  background-size: cover;
+  color: black;
+  font-size: 30px;
+  background-color: white;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  border-radius: 7px;
   box-shadow: 1px 1px 4px #000000;
-
-  /* border-radius: 7px; */
-  /* background-image: url(https://i.pinimg.com/564x/05/40/e2/0540e2f499dcf687d52db476b7a845a6.jpg); */
   transition: height 0.2s, width 0.2s;
   transition: top 0.2s, left 0.2s;
-  transition: box-shadow 0.2;
+  transition: box-shadow 0.2s;
+  transition: font-size 0.2s;
 }
 
-.card:hover {
-  height: 175px;
+.card.unmatched {
+}
+
+.card.selected {
+}
+
+.card.matched {
+  background-color: gray;
+}
+
+.card.unmatched:hover, .card.selected{
+  height: 190.6px;
   width: 125px;
   left: 0px;
   top: 0px;
@@ -72,13 +89,55 @@ h1 {
   /* border: gray 3px solid; */
 }
 
-.reset {
-  height: 30px;
-  width: 70px;
-  font-size: 20px;
-  margin: 5px;
+.reset-container {
+  position:absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 80px;
+  width: 60%;
+  overflow: hidden;
+
 }
 
-.game {
+.reset {
+  position: absolute;
+  left: 40%;
+  top: 40px;
+  width: 140px;
+  height: 180px;
+  margin: 5px;
 
+  font-size: 20px;
+
+  border: none;
+  border-radius: 7px;
+  background-color: none;
+  background-image: url(cards/card_back_blue.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  box-shadow: 1px 1px 10px black, 3px 3px 10px black;
+  filter: brightness(90%);
+
+  transition: top 0.3s;
+}
+
+.reset:hover {
+  top: 0px;
+}
+
+.reset-text {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+
+  color: white;
+  text-shadow: 2px 2px 13px black;
+}
+
+#root {
+  width:100%;
+  height:100%;
 }
